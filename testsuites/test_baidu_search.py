@@ -34,7 +34,8 @@ class BaiduSearch(unittest.TestCase):
         time.sleep(2)
         homepage.get_windows_img()  # 调用基类截图方法
         try:
-            assert 'selenium' in self.driver.title()  # 调用页面对象继承基类中的获取页面标题方法
+            print(self.driver.title)
+            assert 'selenium' in self.driver.title  # 调用页面对象继承基类中的获取页面标题方法
             print('Test Pass.')
         except Exception as e:
             print('Test Fail.', format(e))

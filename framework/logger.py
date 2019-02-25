@@ -20,7 +20,8 @@ class Logger(object):
         log_path = os.path.dirname(os.path.abspath('.')) + '/logs/'
         log_name = log_path + rq + '.log'
 
-        fh = logging.FileHandler(log_name)
+        # encoding写入到文件中转为utf8
+        fh = logging.FileHandler(log_name,encoding='utf8')
         fh.setLevel(logging.INFO)
 
         # 再创建一个handler，用于输出到控制台

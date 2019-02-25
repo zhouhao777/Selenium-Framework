@@ -10,7 +10,7 @@ logger = Logger(logger="BrowserEngine").getlog()
 
 class BrowserEngine(object):
     dir = os.path.dirname(os.path.abspath('.'))  # 注意相对路径获取方法
-    chrome_driver_path = dir + '/tools/chromedriver.exe'
+    chrome_driver_path = dir + '/tools/chromedriver'
     ie_driver_path = dir + '/tools/IEDriverServer.exe'
 
     def __init__(self, driver):
@@ -22,6 +22,7 @@ class BrowserEngine(object):
         # 读取配置配件
         config = ConfigParser()
         file_path = os.path.dirname(os.path.abspath('.')) + '/config/config.ini'
+        firefox_log_path = os.path.dirname(os.path.abspath('.')) + '/logs/geckodriver.log'
         config.read(file_path)
 
         # 获取配置文件属性
@@ -31,7 +32,7 @@ class BrowserEngine(object):
         logger.info("The test server url is: %s" % url)
 
         if browser == "Firefox":
-            driver = webdriver.Firefox()
+            driver = webdriver.Firefox(log_path=firefox_log_path)
             logger.info("Starting firefox browser.")
         elif browser == "Chrome":
             driver = webdriver.Chrome(self.chrome_driver_path)
