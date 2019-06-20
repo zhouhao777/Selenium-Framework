@@ -10,8 +10,8 @@ class LoginHelper(object):
     def h5_login(driver):
         driver.get('https://passport.tt.ab')
         login_page = Login(driver)
-        login_page.type_passport('xxx')
-        login_page.type_password('xxx')
+        login_page.type_passport('13260094707')
+        login_page.type_password('ceshi123')
         login_page.login_submit_btn()
         time.sleep(2)
         # login_page.get_windows_img()  # 调用基类截图方法

@@ -107,7 +107,7 @@ class BasePage(object):
             except NoSuchElementException as e:
                 logger.error("NoSuchElementException: %s" % e)
                 self.get_windows_img()
-        elif selector_by == "s" or selector_by == 'selector_selector':
+        elif selector_by == "s" or selector_by == 'css_selector':
             element = self.driver.find_element_by_css_selector(selector_value)
         else:
             raise NameError("Please enter a valid type of targeting elements.")

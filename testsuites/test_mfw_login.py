@@ -28,9 +28,11 @@ class MfwLogin(unittest.TestCase):
         这里一定要test开头，把测试逻辑代码封装到一个test开头的方法里。
         :return:
         """
+        self.driver.get('https://passport.tt.ab')
+        time.sleep(2)
         login_page = Login(self.driver)
-        login_page.type_passport('13260094707')
-        login_page.type_password('ceshi1123')
+        login_page.type_passport('13200000001')
+        login_page.type_password('123456')
         login_page.login_submit_btn()
         time.sleep(2)
         login_page.get_windows_img()  # 调用基类截图方法

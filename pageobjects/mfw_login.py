@@ -5,10 +5,11 @@ from framework.base_page import BasePage
 
 class Login(BasePage):
     # 输入账号框,输入密码框
-    passport = "xpath=>//*[@id='_j_login_form']/div[1]/input"
+    # passport = "xpath=>//*[@id='_j_login_form']/div[1]/input"
+    passport = 'css_selector=>#_j_login_form>div:nth-child(1)>input'
     password = "xpath=>//*[@id='_j_login_form']/div[2]/input"
     # 登录按钮
-    login_button = "xpath=>//*[@id='_j_login_form']/div[5]/button"
+    login_button = "id=>_js_loginBtn"
 
     def type_passport(self, text):
         self.type(self.passport, text)
